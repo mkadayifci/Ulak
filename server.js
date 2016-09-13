@@ -18,9 +18,15 @@ var handleClient = function (socket) {
 	console.log("Connected");
     // we've got a client connection
     socket.emit("tweet", {user: "nodesource", text: "Hello, world!"});
+    
+    socket.on("Command", function (data) { console.log(data);});
 };
 
+
+
+
 io.on("connection", handleClient);
+
 
 
 // Listen on port 8000, IP defaults to 127.0.0.1
