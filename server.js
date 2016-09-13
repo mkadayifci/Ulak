@@ -19,10 +19,12 @@ var handleClient = function (socket) {
     // we've got a client connection
     socket.emit("tweet", {user: "nodesource", text: "Hello, world!"});
     
-    socket.on("Command", function (data) { console.log(data);});
+    socket.on("Command", commandAction);
 };
 
-
+var commandAction = function (data) {  
+	myPort.write(data);
+};
 
 
 io.on("connection", handleClient);
