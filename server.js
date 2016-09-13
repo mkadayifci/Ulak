@@ -7,11 +7,28 @@ var server = http.createServer(function (request, response) {
   response.end("Hello World\n");
 });
 
+
+
+
+
+
+var io = require("socket.io")(server);
+
+var handleClient = function (socket) {  
+	console.log("Connected");
+    // we've got a client connection
+    socket.emit("tweet", {user: "nodesource", text: "Hello, world!"});
+};
+
+io.on("connection", handleClient);
+
+
 // Listen on port 8000, IP defaults to 127.0.0.1
 server.listen(8000);
 
 // Put a friendly message on the terminal
 console.log("Server running at http://127.0.0.1:8000/");
+
 
 
 
@@ -36,7 +53,7 @@ function showPortOpen() {
 }
  
 function serialDataReceived(data) {
-   console.log(data);
+   //console.log(data);
 }
  
 function showPortClose() {
