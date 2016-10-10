@@ -1,0 +1,27 @@
+{
+  "name": "ulak",
+  "version": "0.1.0",
+  "description": "Communicator between ROV and Control Unit",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "socket.io":"",
+    "serialport":""
+  },
+  "engines": {
+    "node": "6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mkadayifci/Ulak"
+  },
+  "keywords": [
+    "ROV",
+    "nodejs",
+    "Ulak"
+  ],
+  "author": "Mehmet Kadayifci",
+  "license": "MIT"
+}
